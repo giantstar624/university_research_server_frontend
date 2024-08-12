@@ -7,9 +7,13 @@ const backendUrl = import.meta.env.VITE_BACKEND_URL;
 const IdPage = () => {
     const [ids, setIds] = useState<{ [key: string]: string[] }>({});
     useEffect(() => {
-        axios.get(`${backendUrl}/ids`).then((data) => {
-            setIds(data.data);
-        });
+        try {
+            axios.get(`${backendUrl}/ids`).then((data) => {
+                setIds(data.data);
+            });
+        } catch (error) {
+            console.log(error);
+        }
     }, []);
     return <div className="flex flex-col gap-2 items-center justify-center w-full h-full">
         {
