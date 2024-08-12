@@ -6,7 +6,7 @@ const InvitePage = () => {
     const onClick = async () => {
         const result = (await axios.get(`${backendUrl}/launch`)).data;
         if (result.launched == true) {
-            navigate(result.url);
+            location.href = result.url;
         } else alert('All instaces are running. Wait a min');
     }
     return <div className="w-full h-full flex items-center justify-center relative">
