@@ -1,4 +1,4 @@
-import CreateInstancePage from "../pages/createInstance";
+import InstancesPage from "../pages/instances";
 import IdPage from "../pages/IdPage";
 import InvitePage from "../pages/InvitePage";
 import LogPage from "../pages/LogPage";
@@ -17,8 +17,8 @@ const routes = [
         element: <IdPage />
     },
     {
-        path: "create_instance",
-        element: <CreateInstancePage />
+        path: "instances",
+        element: <InstancesPage />
     }
 ];
 
