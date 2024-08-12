@@ -12,7 +12,7 @@ const InstancesPage = () => {
             axios.get(`${backendUrl}/status`, { params: { cnt } })
                 .then((result: any) => {
                     setTotal(result.total);
-                    setRunning(result.runnign);
+                    setRunning(result.running);
                 });
         } catch (error) {
             console.log(error);
