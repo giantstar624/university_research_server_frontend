@@ -9,10 +9,10 @@ const InstancesPage = () => {
     const [running, setRunning] = useState(0);
     useEffect(() => {
         try {
-            axios.get(`${backendUrl}/status`, { params: { cnt } })
+            axios.get(`${backendUrl}/status`)
                 .then((result: any) => {
-                    setTotal(result.total);
-                    setRunning(result.running);
+                    setTotal(result.data.total);
+                    setRunning(result.data.running);
                 });
         } catch (error) {
             console.log(error);
