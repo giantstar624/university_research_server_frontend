@@ -23,7 +23,7 @@ const InstancesPage = () => {
         <button onClick={() => {
             axios.get(`${backendUrl}/create_instance`, { params: { cnt } })
                 .then((result: any) => {
-                    if (result.success) alert("Created successfully");
+                    if (result.data.success) alert("Created successfully");
                     else alert("Failed to create");
                 });
         }}>Create instance</button>
