@@ -1,8 +1,7 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios"
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
 const InvitePage = () => {
-    const navigate = useNavigate();
     const onClick = async () => {
         const result = (await axios.get(`${backendUrl}/launch`)).data;
         if (result.launched == true) {
