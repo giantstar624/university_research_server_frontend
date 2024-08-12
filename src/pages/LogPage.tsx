@@ -8,7 +8,7 @@ const LogPage = () => {
     const [screenshotUrls, setScreenshotUrls] = useState([]);
     const [logUrl, setLogUrl] = useState("");
     const fetchLogs = async () => {
-        const {logUrl, screenUrls} = (await axios.get(`${backendUrl}/logs?id=${id}`)).data;
+        const { logUrl, screenUrls } = (await axios.get(`${backendUrl}/logs?id=${id}`)).data;
         setLogUrl(logUrl);
         setScreenshotUrls(screenUrls);
     }
