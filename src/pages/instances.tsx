@@ -21,7 +21,10 @@ const InstancesPage = () => {
         }
     }, []);
     return <div className="flex flex-col gap-2 items-center justify-center w-full h-full">
-        <div>Instances running: {inResearch} in research, {noResponse} no response / Total {total}</div>
+        <div>Total {total}</div>
+        <div>{inResearch} In research</div>
+        <div> {noResponse} no response</div>
+        <div> {total - inResearch - noResponse} free </div>
         <button onClick={() => {
             axios.get(`${backendUrl}/create_instance`, { params: { cnt } })
                 .then((result: any) => {
