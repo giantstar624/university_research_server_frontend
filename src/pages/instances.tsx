@@ -6,20 +6,22 @@ const backendUrl = import.meta.env.VITE_BACKEND_URL;
 const InstancesPage = () => {
     const [cnt, setCnt] = useState(0);
     const [total, setTotal] = useState(0);
-    const [running, setRunning] = useState(0);
+    const [inResearch, setInResearch] = useState(0);
+    const [noResponse, setNoResponse] = useState(0);
     useEffect(() => {
         try {
             axios.get(`${backendUrl}/status`)
                 .then((result: any) => {
                     setTotal(result.data.total);
-                    setRunning(result.data.running);
+                    setInResearch(result.data.inResearch);
+                    setNoResponse(result.data.noResponse);
                 });
         } catch (error) {
             console.log(error);
         }
     }, []);
     return <div className="flex flex-col gap-2 items-center justify-center w-full h-full">
-        <div>Instances running: {running}/{total}</div>
+        <div>Instances running: {inResearch} in research, {noResponse} no response / Total {total}</div>
         <button onClick={() => {
             axios.get(`${backendUrl}/create_instance`, { params: { cnt } })
                 .then((result: any) => {
