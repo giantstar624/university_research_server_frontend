@@ -25,14 +25,14 @@ const InstancesPage = () => {
         <div>{inResearch} In research</div>
         <div> {noResponse} no response</div>
         <div> {total - inResearch - noResponse} free </div>
-        <button onClick={() => {
+        <button className="bg-cyan-500 hover:bg-cyan-600" onClick={() => {
             axios.get(`${backendUrl}/create_instance`, { params: { cnt } })
                 .then((result: any) => {
                     if (result.data.success) alert("Created successfully");
                     else alert("Failed to create");
                 });
         }}>Create instance</button>
-        <input type="number" onChange={e => setCnt(parseInt(e.target.value))} />
+        <input type="number" style={{ border: "1px solid black" }} onChange={e => setCnt(parseInt(e.target.value))} />
     </div>
 };
 
