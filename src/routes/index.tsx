@@ -2,6 +2,7 @@ import InstancesPage from "../pages/instances";
 import IdPage from "../pages/IdPage";
 import InvitePage from "../pages/InvitePage";
 import LogPage from "../pages/LogPage";
+import AdminPage from "../pages/AdminPage";
 
 const routes = [
     {
@@ -17,8 +18,12 @@ const routes = [
         element: <IdPage />
     },
     {
-        path: "instances",
+        path: "status",
         element: <InstancesPage />
+    },
+    {
+        path: "admin",
+        element: <AdminPage />
     }
 ];
 
